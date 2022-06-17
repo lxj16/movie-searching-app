@@ -9,7 +9,7 @@ function SearchBar(props) {
   };
 
   const onFormSubmit = (e) => {
-    props.onFormSubmit(input);
+    props.onFormSubmit(input.trim().replace(/\s(?=\s)/g, ""));
 
     e.preventDefault();
   };
@@ -21,12 +21,11 @@ function SearchBar(props) {
           <input
             className='search-input'
             type='text'
-            name='movieSearch'
-            placeholder='Search'
+            placeholder={props.placeholder}
             value={input}
             onChange={onChangeHandler}
           />
-          <button className='search-btn'>Search</button>
+          <button className='search-btn'>{props.btnText}</button>
         </div>
       </form>
     </div>

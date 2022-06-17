@@ -13,12 +13,6 @@
   max-width: 300px;
   object-fit: cover;
 }
-/* .movie-info-container {
-  position: absolute;
-  width: 100%;
-  min-height: 150px;
-  bottom: 0;
-} */
 
 .movie-info {
   display: flex;
@@ -27,10 +21,11 @@
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
+  min-height: 4rem;
 }
 
 .movie-title {
-  vertical-align: middle;
+  margin-bottom: 0;
 }
 
 .fav-button-container {

@@ -1,12 +1,12 @@
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
-import getMovies from "./apis/OMDB";
+import getMovies from "./apis/getMovies";
 import MovieList from "./components/MovieList/MovieList";
 import React from "react";
 
 function App() {
   const [movies, setMovies] = React.useState([]);
-
+  console.log(process.env.REACT_APP_OMDB_API_KEY, "asdasdasd");
   React.useEffect(() => {
     onSearchSubmit("Iron man");
   }, []);
@@ -14,11 +14,12 @@ function App() {
   const onSearchSubmit = async (input) => {
     try {
       const response = await getMovies(
-        `http://www.omdbapi.com/?apikey=e4d5cb13&s=${input}`
+        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${input}`
       );
       console.log(response, input);
       if (response.Error) {
         alert(`${response.Error} Please try again!`);
+        console.log(response.Error, "fetch data failed");
         return;
       }
       setMovies(response.Search);
@@ -26,12 +27,15 @@ function App() {
       console.log(e, "fetch data error");
     }
   };
-  // const movie = getMovies("http://www.omdbapi.com/?apikey=e4d5cb13&t=iron-man");
 
   return (
     <div className='app'>
       <div id='header'>
-        <SearchBar onFormSubmit={onSearchSubmit} />
+        <SearchBar
+          placeholder='Movie title...'
+          btnText='Search Movie'
+          onFormSubmit={onSearchSubmit}
+        />
       </div>
 
       <div id='result-container'>

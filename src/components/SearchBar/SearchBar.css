@@ -22,4 +22,9 @@
 .search-btn {
   border-radius: 20px;
   border-width: 0;
+  padding: 0.5rem 1rem;
+}
+
+.search-btn:active {
+  opacity: 90%;
 }
