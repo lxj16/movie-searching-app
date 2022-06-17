@@ -13,7 +13,7 @@ function App() {
   const onSearchSubmit = async (input) => {
     try {
       const response = await getMovies(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${input}`
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${input}`
       );
 
       if (response.Error) {
@@ -23,7 +23,7 @@ function App() {
       }
       setMovies(response.Search);
     } catch (e) {
-      console.log(e.response, "fetch data error");
+      console.log(e, "fetch data error");
     }
   };
 
