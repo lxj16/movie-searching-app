@@ -21,11 +21,11 @@
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
-  min-height: 4rem;
+  min-height: 5rem;
 }
 
 .movie-title {
-  margin-bottom: 0;
+  margin: auto 0;
 }
 
 .fav-button-container {

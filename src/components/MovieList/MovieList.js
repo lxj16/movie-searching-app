@@ -8,7 +8,7 @@ function MovieList(props) {
   return (
     <div className='movie-list'>
       {MovieList.map((movie) => {
-        return <Movie movie={movie} />;
+        return <Movie movie={movie} key={movie.imdbID} />;
       })}
     </div>
   );

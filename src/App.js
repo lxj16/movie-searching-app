@@ -6,9 +6,8 @@ import React from "react";
 
 function App() {
   const [movies, setMovies] = React.useState([]);
-  console.log(process.env.REACT_APP_OMDB_API_KEY, "asdasdasd");
   React.useEffect(() => {
-    onSearchSubmit("Iron man");
+    onSearchSubmit("COCO");
   }, []);
 
   const onSearchSubmit = async (input) => {
@@ -16,7 +15,7 @@ function App() {
       const response = await getMovies(
         `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${input}`
       );
-      console.log(response, input);
+
       if (response.Error) {
         alert(`${response.Error} Please try again!`);
         console.log(response.Error, "fetch data failed");
@@ -24,7 +23,7 @@ function App() {
       }
       setMovies(response.Search);
     } catch (e) {
-      console.log(e, "fetch data error");
+      console.log(e.response, "fetch data error");
     }
   };
 
