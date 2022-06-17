@@ -7,7 +7,7 @@ import React from "react";
 function App() {
   const [movies, setMovies] = React.useState([]);
   React.useEffect(() => {
-    onSearchSubmit("COCO");
+    onSearchSubmit("Iron Man");
   }, []);
 
   const onSearchSubmit = async (input) => {
