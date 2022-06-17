@@ -1,0 +1,53 @@
+.movie-container {
+  width: 300px;
+  min-height: 100%;
+  margin: 1rem;
+  position: relative;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.movie-container img {
+  width: auto;
+  height: 500px;
+  max-width: 300px;
+  object-fit: cover;
+}
+/* .movie-info-container {
+  position: absolute;
+  width: 100%;
+  min-height: 150px;
+  bottom: 0;
+} */
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.movie-title {
+  vertical-align: middle;
+}
+
+.fav-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 1rem;
+}
+
+.fav-button {
+  border: 2px solid rgb(38, 85, 52);
+  border-radius: 50px;
+  font: 1rem sans-serif;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.fav-button:active {
+  opacity: 80%;
+}
